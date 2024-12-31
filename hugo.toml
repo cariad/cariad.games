@@ -1,3 +1,9 @@
 baseURL = "https://www.cariad.games/"
 languageCode = "en-gb"
+theme = "cg"
 title = "cariad.games"
+
+[params]
+  [params.author]
+    name = "Cariad Eccleston"
+    url = "https://queer.garden/@cariad"
