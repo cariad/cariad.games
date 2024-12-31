@@ -17,11 +17,39 @@
   --small-line-height: 1.3;
 
   --smaller-text: 0.8rem;
+
+  --background: #f9f9f9;
+  --spoiler-color: #D81159;
+  --text-color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --text-color: #ddd;
+  }
+
+  #spoiler {
+    background: hsl(from var(--spoiler-color) h s calc(l - 20)) !important;
+  }
+
+  a {
+    color: rgb(152, 149, 251);
+  }
+
+  a:visited {
+    color: rgb(190, 117, 254);
+  }
+
+  img {
+    filter: brightness(75%);
+  }
 }
 
 body {
+  background: var(--background);
   column-gap: var(--body-column-gap);
-  color: #444;
+  color: var(--text-color);
 
   display: grid;
 
@@ -135,8 +163,6 @@ figcaption {
 }
 
 #spoiler {
-  --spoiler-color: #D81159;
-
   /* Thank you, https://moiety.me! */
   background: hsl(from var(--spoiler-color) h s calc(l + 50));
   border: 3px solid var(--spoiler-color);
