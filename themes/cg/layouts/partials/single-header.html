@@ -1,0 +1,31 @@
+{{ partial "single-header-image.html" . }}
+
+<div id="byline">
+  {{ $machineDate := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+
+  <time datetime="{{ $machineDate }}">
+    📅
+    {{ .Date | time.Format "Monday" }},
+    {{ humanize .Date.Day }}
+    {{ .Date | time.Format "January 2006" -}}
+  </time>
+
+  <div>
+    {{ or site.Params.author.emoji "🫥" -}}
+    <a
+      href="{{ site.Params.author.url }}"
+      rel="me"
+    >
+      {{ or site.Params.author.name "someone" -}}
+    </a>
+  </div>
+</div>
+
+<h1>{{ .Title }}</h1>
+
+{{ with .Params.spoiler }}
+  <aside id="spoiler">
+    <h2>Spoilers ahoy!</h2>
+    <p>{{ . }}</p>
+  </aside>
+{{ end }}
