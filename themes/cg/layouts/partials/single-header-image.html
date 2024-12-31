@@ -1,7 +1,7 @@
 {{ $images := .Site.GetPage "/images" }}
 {{ $resource := $images.Resources.GetMatch .Params.image }}
-{{ $render_width := 550 }}
-{{ $render_height := 550 }}
+{{ $render_width := 540 }}
+{{ $render_height := 540 }}
 {{ $resample_format := default "Lanczos webp" $resource.Params.resample_format }}
 {{ $multipliers := slice 1 1.5 2 3 4 }}
 {{ $srcset := "" }}
