@@ -1,0 +1,37 @@
+{{ $images := .Site.GetPage "/images" }}
+{{ $resource := $images.Resources.GetMatch .Params.image }}
+{{ $render_width := 550 }}
+{{ $render_height := 550 }}
+{{ $resample_format := default "Lanczos webp" $resource.Params.resample_format }}
+{{ $multipliers := slice 1 1.5 2 3 4 }}
+{{ $srcset := "" }}
+{{ $smallest_src := "" }}
+
+{{ range $multipliers }}
+
+  {{ $render_width := int (mul $render_width .) }}
+  {{ $render_height := int (mul $render_height .) }}
+
+  {{ if lt $render_width $resource.Width }}
+
+    {{ $params := print $render_width "x" $render_height " " $resample_format }}
+    {{ $img := $resource.Fill $params }}
+
+    {{ if eq . 1 }}
+      {{ $srcset = $img.RelPermalink }}
+      {{ $smallest_src = $img.RelPermalink }}
+    {{ else }}
+      {{ $srcset = print $srcset ", " $img.RelPermalink " " . "x" }}
+    {{ end }}
+
+  {{ end }}
+
+{{ end }}
+
+<img
+  alt="{{ $resource.Params.alt }}"
+  height="{{ $render_height }}"
+  src="{{ $smallest_src }}"
+  srcset="{{ $srcset }}"
+  width="{{ $render_width }}"
+/>
