@@ -37,7 +37,7 @@ body {
   margin-top: 50px;
   margin-bottom: 200px;
 
-  max-width: 100vw;
+  max-width: 90vw;
 
   width: var(--content-width);
 }
@@ -67,6 +67,11 @@ h1 {
   font-family: "Gabarito", serif;
   font-optical-sizing: auto;
   font-weight: 600;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
 }
 
 figcaption {
