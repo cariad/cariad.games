@@ -80,7 +80,11 @@ figcaption {
   --horizontal-margin: 5px;
 
   display: flex;
+
+  flex-flow: row wrap;
   font-size: var(--smaller-text);
+
+  row-gap: 10px;
 
   justify-content: space-between;
 
@@ -107,7 +111,9 @@ figcaption {
 
 #byline {
   display: flex;
+  flex-flow: row wrap;
   font-size: var(--small-text);
+  row-gap: 10px;
   justify-content: space-between;
 }
 
