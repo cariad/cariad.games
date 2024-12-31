@@ -1,0 +1,58 @@
+{{ $name := .Get "name" }}
+{{ $images := .Site.GetPage "/images" }}
+{{ $resource := $images.Resources.GetMatch $name }}
+{{ $actual_width := float $resource.Width }}
+{{ $aspect_ratio := div $actual_width $resource.Height }}
+{{ $render_width := math.Min $resource.Width 540 }}
+{{ $render_height := int (div $render_width $aspect_ratio) }}
+
+{{ $resample_format := default "Lanczos webp" $resource.Params.resample_format }}
+{{ $multipliers := slice 1 1.5 2 3 4 }}
+{{ $srcset := "" }}
+{{ $smallest_src := "" }}
+{{ $largest_src := "" }}
+
+{{ range $multipliers }}
+
+  {{ $render_width := int (mul $render_width .) }}
+
+  {{ if lt $render_width $resource.Width }}
+
+    {{ $params := print $render_width "x " $resample_format }}
+    {{ $img := $resource.Resize $params }}
+    {{ $largest_src = $img.RelPermalink }}
+
+    {{ if eq . 1 }}
+      {{ $srcset = $img.RelPermalink }}
+      {{ $smallest_src = $img.RelPermalink }}
+    {{ else }}
+      {{ $srcset = print $srcset ", " $img.RelPermalink " " . "x" }}
+    {{ end }}
+
+  {{ end }}
+
+{{ end }}
+
+<figure>
+
+  <a
+    href="{{ $largest_src }}"
+    title="{{ $resource.Params.caption | plainify }}"
+  >
+    <img
+      alt="{{ $resource.Params.alt }}"
+      srcset="{{ $srcset }}"
+      src="{{ $smallest_src }}"
+      width="{{ $render_width }}"
+      height="{{ $render_height }}"
+    />
+  </a>
+
+  {{ with $resource.Params }}
+    <figcaption>
+      <div>{{ .caption | markdownify }}</div>
+      <div>🎲 {{ .game }}</div>
+    </figcaption>
+  {{ end }}
+
+</figure>
