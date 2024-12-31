@@ -1,0 +1,41 @@
+<p
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dct="http://purl.org/dc/terms/"
+>
+  <a
+    property="dct:title"
+    rel="cc:attributionURL"
+    href="{{ .Permalink }}"
+  >
+    {{- if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end -}}
+  </a>
+  &copy;&nbsp;2024-{{ now.Year }} by
+  <a
+    rel="cc:attributionURL dct:creator me"
+    property="cc:attributionName"
+    href="{{ site.Params.author.url }}"
+  >
+    {{- site.Params.author.name -}}
+  </a>
+  is licensed under
+  <a
+    class="creative-commons-licence"
+    href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank"
+    rel="license noopener noreferrer"
+  >
+    CC BY-NC-SA 4.0<img
+      alt="Creative Commons"
+      src="/cc/cc.svg"
+    /><img
+      alt="Attribution"
+      src="/cc/by.svg"
+    /><img
+      alt="Non-commercial"
+      src="/cc/nc.svg"
+    /><img
+      alt="Share alike"
+      src="/cc/sa.svg"
+    >
+  </a>
+</p>
