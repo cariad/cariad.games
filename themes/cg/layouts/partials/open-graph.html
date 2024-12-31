@@ -1,0 +1,83 @@
+{{ with site.Params.author.fediverse }}
+  <meta
+    content="{{- . -}}"
+    name="fediverse:creator"
+  />
+{{ end }}
+
+<meta
+  content="{{- .Summary -}}"
+  property="og:description"
+/>
+
+<meta
+  content="{{- site.Language.LanguageCode -}}"
+  property="og:locale"
+/>
+
+<meta
+  content="{{ site.Title }}"
+  property="og:site_name"
+/>
+
+<meta
+  content="{{- if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s • %s" .Title site.Title }}{{ end -}}"
+  property="og:title"
+/>
+
+<meta
+  content="{{ if .IsPage }}article{{ else }}website{{ end }}"
+  property="og:type"
+/>
+
+<meta
+  content="{{- .Permalink -}}"
+  property="og:url"
+/>
+
+{{ if .IsPage }}
+  <meta
+    content="{{ site.Params.author.name }}"
+    property="article:author"
+  />
+
+  <meta
+    content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}"
+    property="article:published_time"
+  />
+{{ end }}
+
+{{ with .Params.image }}
+  {{ $images := site.GetPage "/images" }}
+  {{ $image := $images.Resources.GetMatch . }}
+
+  <meta
+    content="{{- $image.Params.alt -}}"
+    property="og:image:alt"
+  />
+
+  <meta
+    content="{{- $image.Height -}}"
+    property="og:image:height"
+  />
+
+  <meta
+    content="{{- $image.Permalink -}}"
+    property="og:image"
+  />
+
+  <meta
+    content="{{- $image.Permalink -}}"
+    property="og:image:secure_url"
+  />
+
+  <meta
+    content="{{- $image.Params.mime -}}"
+    property="og:image:type"
+  />
+
+  <meta
+    content="{{- $image.Width -}}"
+    property="og:image:width"
+  />
+{{ end }}

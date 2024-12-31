@@ -6,5 +6,6 @@ title = "cariad.games"
 [params]
   [params.author]
     emoji = "👩‍💻"
+    fediverse = "@cariad@queer.garden"
     name = "Cariad Eccleston"
     url = "https://queer.garden/@cariad"
