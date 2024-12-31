@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ .Content }}
+
+  <div id="article-list">
+    {{ range site.RegularPages }}
+      {{ partial "article-in-list.html" . }}
+    {{ end }}
+  </div>
+{{ end }}
