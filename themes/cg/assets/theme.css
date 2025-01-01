@@ -193,11 +193,11 @@ figcaption {
   line-height: var(--small-line-height);
 }
 
-#single main > * {
+#single > *:not(:first-child) {
   margin-top: var(--paragraph-gap);
 }
 
-#single main p {
+#single > p {
   line-height: 1.5;
 }
 
