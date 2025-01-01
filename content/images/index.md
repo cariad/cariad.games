@@ -1,9 +1,18 @@
 ---
 headless: true
 resources:
+  - name: bicycle-gold-standard-2025-front
+    params:
+      alt: A photograph of a Bicycle Gold Standard playing cards tuck box. The box has a gold border with a blue spade icon in the centre.
+      caption: Front of the tuck box
+      game: Bicycle Gold Standard
+      mime: image/jpeg
+      resample_format: lanczos webp photo
+    src: bicycle-gold-standard-2025-front.jpg
+
   - name: bicycle-gold-standard-2025-sealed
     params:
-      alt: A photograph of a sealed deck of Bicycle Gold Standard playing cards on a wooden desk. The tuck box has a gold border with a blue spade icon in the centre.
+      alt: A photograph of a sealed Bicycle Gold Standard playing cards tuck box on a wooden desk. The box has a gold border with a blue spade icon in the centre.
       caption: A sealed deck of Bicycle Gold Standard playing cards
       game: Bicycle Gold Standard
       mime: image/jpeg
