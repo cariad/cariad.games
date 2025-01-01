@@ -1,1 +1,10 @@
-<h1 id="logo"><a href="/">{{ site.Title }}</a></h1>
+<div id="logo">
+  {{ if .IsHome }}<h1>{{ else }}<p>{{ end }}
+    <a
+      href="/"
+      title="Home"
+    >
+      {{- site.Title -}}
+    </a>
+  {{ if .IsHome }}</h1>{{ else }}</p>{{ end }}
+</div>

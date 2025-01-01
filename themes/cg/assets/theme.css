@@ -97,7 +97,8 @@ a {
   text-underline-offset: 0.12rem;
 }
 
-h1 {
+h1,
+#logo {
   font-family: "Gabarito", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -151,6 +152,10 @@ figcaption {
 
 #logo {
   margin-bottom: var(--paragraph-gap);
+}
+
+#logo > * {
+  font-size: 2rem;
 }
 
 #logo a {
