@@ -94,7 +94,7 @@ footer p {
 }
 
 a {
-  text-decoration: none;
+  text-underline-offset: 0.12rem;
 }
 
 h1 {
@@ -155,6 +155,7 @@ figcaption {
 
 #logo a {
   color: inherit;
+  text-decoration: none;
 }
 
 #single h1 {
