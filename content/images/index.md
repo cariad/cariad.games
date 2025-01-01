@@ -1,9 +1,18 @@
 ---
 headless: true
 resources:
+  - name: bicycle-gold-standard-2025-bottom
+    params:
+      alt: A photograph of the bottom of a Bicycle Gold Standard playing cards tuck box. The text reads "© 2022. The United States Playing Card Company. All rights reserved. Manufactured by The United States Playing Card Company, Erlanger, KY 41018. Made in USA." There are "möbius loop" recycling, CE (Conformité Européene) and UKCA (UK Conformity Assessed) logos. The Universal Product Code is 073854016510."
+      caption: Front of the tuck box
+      game: Bicycle Gold Standard
+      mime: image/jpeg
+      resample_format: lanczos webp photo
+    src: bicycle-gold-standard-2025-bottom.jpg
+
   - name: bicycle-gold-standard-2025-front
     params:
-      alt: A photograph of a Bicycle Gold Standard playing cards tuck box. The box has a gold border with a blue spade icon in the centre.
+      alt: A photograph of the front of a Bicycle Gold Standard playing cards tuck box. The box has a gold border with a blue spade icon in the centre.
       caption: Front of the tuck box
       game: Bicycle Gold Standard
       mime: image/jpeg
@@ -18,6 +27,15 @@ resources:
       mime: image/jpeg
       resample_format: lanczos webp photo
     src: bicycle-gold-standard-2025-sealed.jpg
+
+  - name: bicycle-gold-standard-2025-side
+    params:
+      alt: A photograph of the side of a Bicycle Gold Standard playing cards tuck box. The text reads "come to play" and "bicyclecards.com" with a blue spade icon in-between.
+      caption: Side of the tuck box
+      game: Bicycle Gold Standard
+      mime: image/jpeg
+      resample_format: lanczos webp photo
+    src: bicycle-gold-standard-2025-side.jpg
 
   - name: wilmot-works-it-out-2024-12-bathroom
     params:
