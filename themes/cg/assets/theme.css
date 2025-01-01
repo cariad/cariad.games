@@ -19,7 +19,7 @@
   --smaller-text: 0.8rem;
 
   --background: #f9f9f9;
-  --spoiler-color: #D81159;
+  --spoiler-color: #FF4365;
   --text-color: #333;
 }
 
@@ -95,6 +95,14 @@ footer p {
 
 a {
   text-underline-offset: 0.12rem;
+}
+
+blockquote {
+  --padding: 12px;
+  border-left: 6px solid #3E92CC;
+  padding-left: var(--padding);
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
 }
 
 h1,
@@ -197,6 +205,7 @@ figcaption {
   margin-top: var(--paragraph-gap);
 }
 
+blockquote p,
 #single > p {
   line-height: 1.5;
 }
