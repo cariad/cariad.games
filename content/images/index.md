@@ -1,6 +1,15 @@
 ---
 headless: true
 resources:
+  - name: bicycle-gold-standard-2025-sealed
+    params:
+      alt: A photograph of a sealed deck of Bicycle Gold Standard playing cards on a wooden desk. The tuck box has a gold border with a blue spade icon in the centre.
+      caption: A sealed deck of Bicycle Gold Standard playing cards
+      game: Bicycle Gold Standard
+      mime: image/jpeg
+      resample_format: lanczos webp photo
+    src: bicycle-gold-standard-2025-sealed.jpg
+
   - name: wilmot-works-it-out-2024-12-bathroom
     params:
       alt: A screenshot from "Wilmot Works it Out". The background is a drawing of a bathroom with a cactus, a toilet, a bath, a potted plant, a sink and a bookcase. Wilmot, a white square with a kind smiling face, is having a bubble bath. The wall is yellow with cloud patterns and jigsaw puzzles hanging on the wall as art. The pictures are a school of fish, a deep-sea diver, a photograph of a tourist standing in front of the Tower of Pisa, and a collection of hardware tools.
